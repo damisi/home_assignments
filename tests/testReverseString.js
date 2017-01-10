@@ -34,6 +34,10 @@ describe("Produce the reverse order of a word: ", function() {
       expect(reverseString('lisabonetatenobasil')).toEqual(true);
     });
 
+    it("should return true for `lisa bonet ate no basil`", function() {
+      expect(reverseString('lisa bonet ate no basil')).toEqual(true);
+    });
+
   });
 
   describe("Case for normal words", function() {

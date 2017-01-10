@@ -6,17 +6,31 @@ return null when the string is empty*/
 module.exports = {
 
 	reverseString: function(string){
-		var reverse = '';
+		var reverse = [];
+		var intermediate = [];
+
 		if (string === ''){
 			reverse = null;
 		}
-		for (let i = (string.length-1); i >= 0; i--){
+		else{
+			var splitting = string.split('');
+
+			for (let i = (splitting.length-1); i >= 0; i--){
+				
+				intermediate.push(splitting[i]);
+			}
+
+			reverse = intermediate.join('');
+			var joined = reverse.replace(/ /g, '')
+			var sJoined = string.replace(/ /g, '')
 			
-			reverse += string[i];
-			
-		}
-		if (reverse === string){
-			return true;
+			if (sJoined === joined){
+				return true;
+			}
+			else if (reverse === string){
+				return true;
+				
+			}
 		}
 		return reverse;
 	}
